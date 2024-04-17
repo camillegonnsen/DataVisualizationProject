@@ -1,0 +1,288 @@
+DATO,VARE,KATEGORI,ANTAL,ENHEDSPRIS,BUTIK,PERSON,IALT
+20/03/2024,Sorte bønner,Kolonial,1,5.50,Lidl,Anna,5.50
+20/03/2024,Halloumi,Mejeri,2,25.00,Lidl,Anna,50.00
+20/03/2024,Ingefær,Frugt/grønt,1,12.00,365,Anna,12.00
+20/03/2024,Tomat passata,Kolonial,2,10.00,365,Anna,20.00
+20/03/2024,Tomat puré,Kolonial,1,11.00,365,Anna,11.00
+20/03/2024,Lime,Frugt/grønt,1,3.50,Føtex,Camille,3.50
+20/03/2024,Jasmin ris,Kolonial,1,25.00,Føtex,Camille,25.00
+20/03/2024,Corny muslibar,Snacks/slik,1,6.00,Føtex,Camille,6.00
+20/03/2024,Håndsæbe,Andet,1,39.00,Føtex,Camille,30.00
+20/03/2024,Refill håndsæbe,Andet,1,20.00,Føtex,Camille,20.00
+20/03/2024,Køkkenrulle,Andet,1,20.00,Føtex,Camille,20.00
+20/03/2024,Grana padano,Mejeri,1,33.95,Rema 1000,Isabella,33.95
+20/03/2024,Mozzarella,Mejeri,1,5.00,Rema 1000,Isabella,5.00
+20/03/2024,Ricotta,Mejeri,1,12.95,Rema 1000,Isabella,12.95
+20/03/2024,Soltørrede tomater,Kolonial,1,12.00,Rema 1000,Isabella,12.00
+20/03/2024,Baby spinat,Frugt/grønt,1,12.00,Rema 1000,Isabella,12.00
+20/03/2024,Champignon,Frugt/grønt,1,16.00,Rema 1000,Isabella,16.00
+20/03/2024,Tapas tomat,Frugt/grønt,1,20.00,Rema 1000,Isabella,20.00
+20/03/2024,Minimælk,Mejeri,1,11.50,365,Nikoline,11.50
+20/03/2024,Chips,Snacks/slik,1,14.95,365,Nikoline,14.95
+21/03/2024,Six pack pepsi max,Alkohol/soda,1,43.50,Lidl,Anna,43.50
+21/03/2024,Bagel chilli/cheddar,Frost,1,39.95,Meny,Anna,39.95
+21/03/2024,Kyllingebrystfilet,Kød,1,25.00,365,Anna,25.00
+21/03/2024,Hønsesalat,Kød,2,10.00,365,Anna,20.00
+21/03/2024,Cheddar,Mejeri,1,12.95,365,Anna,12.95
+21/03/2024,Kålblandning,Frugt/grønt,1,15.00,365,Anna,15.00
+21/03/2024,Gravad laks,Kød,1,22.00,365,Anna,22.00
+21/03/2024,Kalkunbacon,Kød,1,10.00,365,Anna,10.00
+21/03/2024,Drømmekage mix,Snacks/slik,1,24.00,Føtex,Camille,24.00
+22/03/2024,Bao buns,Frost,1,75.00,Asiatisk købmand,Camille,75.00
+22/03/2024,Hoisin sauce,Kolonial,1,28.00,Asiatisk købmand,Camille,28.00
+22/03/2024,Agurk,Frugt/grønt,1,7.00,Føtex,Camille,7.00
+22/03/2024,Purløg,Frugt/grønt,1,10.00,Føtex,Camille,10.00
+22/03/2024,Champignon,Frugt/grønt,1,17.00,Føtex,Camille,17.00
+22/03/2024,Flæsk i skiver,Kød,1,44.00,Føtex,Camille,44.00
+22/03/2024,Salsiccia pølse,Kød,1,33.00,Føtex,Camille,33.00
+22/03/2024,Fløde,Mejeri,1,13.50,Føtex,Camille,13.50
+22/03/2024,Creme fraiche,Mejeri,1,15.50,Føtex,Camille,15.50
+22/03/2024,Chili mayo,Kolonial,1,20.00,Føtex,Camille,20.00
+22/03/2024,Kims havsalt,Snacks/slik,1,12.00,Føtex,Camille,12.00
+22/03/2024,Kims dild,Snacks/slik,1,12.00,Føtex,Camille,12.00
+22/03/2024,Marabou daim,Snacks/slik,1,38.00,Føtex,Camille,38.00
+22/03/2024,Hvidvin,Alkohol/soda,1,100.00,Føtex,Camille,100.00
+22/03/2024,Pepsi max,Alkohol/soda,1,19.00,Føtex,Camille,19.00
+22/03/2024,Havarti ost,Mejeri,1,35.00,Meny,Camille,35.00
+22/03/2024,Makrelsalat,Kød,1,13.00,Meny,Camille,13.00
+22/03/2024,Rødløg,Frugt/grønt,1,1.50,Meny,Camille,1.50
+22/03/2024,Små blinis,Frost,1,30.00,Fiskehandler,Camille,30.00
+22/03/2024,Stenbiderrogn,Køl,1,85.00,Fiskehandler,Camille,85.00
+22/03/2024,Faxe kondi,Alkohol/soda,1,9.00,365,Anna,9.00
+22/03/2024,Kalkunsalami,Kød,1,12.95,365,Anna,12.95
+22/03/2024,Gouda,Mejeri,1,20.00,365,Anna,20.00
+22/03/2024,Kartofler,Frugt/grønt,1,12.00,365,Anna,12.00
+22/03/2024,Chips,Snacks/slik,1,12.95,365,Anna,12.95
+23/03/2024,Kyllingebrystfilet,Kød,1,25.00,365,Anna,25.00
+21/03/2024,Kalkunbacon,Kød,1,10.00,365,Anna,10.00
+22/03/2024,Oreo Double creme,Snacks/slik,1,15.00,365,Jonathan,15.00
+22/03/2024,Kernegrov rugbrød,Brød,1,12.00,365,Jonathan,12.00
+22/03/2024,Sweet and Crispy Corn puffs,Snacks/slik,1,15.00,365,Jonathan,15.00
+22/03/2024,Faxe kondi booster,Alkohol/soda,1,11.00,365,Jonathan,11.00
+23/03/2024,Mini choko chips,Snacks/slik,1,10.00,365,Jonathan,10.00
+23/03/2024,Jordbær Yoghurt,Mejeri,1,12.00,365,Jonathan,12.00
+23/03/2024,Danskvand Lemon,Alkohol/soda,1,8.20,365,Jonathan,8.20
+23/03/2024,Islandsk Skyr 365,Mejeri,1,22.95,365,Jonathan,22.95
+24/03/2024,Pepsi max,Alkohol/soda,1,28.95,Rema 1000,Anna,28.95
+24/03/2024,Mælk,Mejeri,1,14.00,365,Camille,14.00
+24/03/2024,Skyr,Mejeri,1,32.00,365,Camille,32.00
+24/03/2024,Feta,Mejeri,1,22.00,365,Camille,22.00
+24/03/2024,Dijon sennep,Kolonial,1,12.00,365,Camille,12.00
+24/03/2024,Couscous ,Kolonial,1,13.00,365,Camille,13.00
+24/03/2024,Salat,Frugt/grønt,1,10.00,365,Camille,10.00
+24/03/2024,Dadler,Frugt/grønt,1,29.00,365,Camille,29.00
+24/03/2024,Mayonnaise Light,Kolonial,1,10.25,Rema 1000,Isabella,10.25
+24/03/2024,Ingefær,Frugt/grønt,1,13.00,Rema 1000,Isabella,13.00
+24/03/2024,Skrabeæg,Køl,2,10.00,Rema 1000,Isabella,20.00
+24/03/2024,Ekstra store rejer,Frost,1,20.00,Rema 1000,Isabella,20.00
+24/03/2024,Paneret fiskefileter ,Frost,1,20.00,Rema 1000,Isabella,20.00
+25/03/2024,Spinat,Frugt/grønt,1,17.00,Føtex,Camille,17.00
+25/03/2024,Rød peberfrugt,Frugt/grønt,1,22.00,Føtex,Camille,22.00
+25/03/2024,Gulerødder,Frugt/grønt,1,14.00,Føtex,Camille,14.00
+25/03/2024,Soltørrede tomater,Kolonial,1,21.00,Føtex,Camille,21.00
+25/03/2024,Tortillini,Kolonial,1,13.00,Føtex,Camille,13.00
+25/03/2024,Kokosmælk,Kolonial,1,16.00,Føtex,Camille,16.00
+25/03/2024,Mozzarella,Mejeri,1,8.50,Føtex,Camille,8.50
+25/03/2024,Cashewnødder,Kolonial,1,16.00,Føtex,Camille,16.00
+25/03/2024,Tomat puré,Kolonial,1,5.00,Føtex,Camille,5.00
+25/03/2024,Fløde,Mejeri,1,13.50,Føtex,Camille,13.50
+25/03/2024,Madlavningsfløde,Mejeri,1,8.95,Rema 1000,Isabella,8.95
+25/03/2024,Mozzarella ,Mejeri,2,8.50,Rema 1000,Isabella,17.00
+25/03/2024,Cheasy vanilje yoghurt ,Mejeri,1,20.95,Rema 1000,Isabella,20.95
+25/03/2024,Let mornaysauce,Kolonial,1,17.95,Rema 1000,Isabella,17.95
+25/03/2024,Agurk,Frugt/grønt,1,8.00,Rema 1000,Isabella,8.00
+25/03/2025,Rød peber,Frugt/grønt,1,7.25,Rema 1000,Isabella,7.25
+25/03/2024,Cherryblommetomat,Frugt/grønt,2,10.00,Rema 1000,Isabella,20.00
+25/03/2028,Salat mix,Frugt/grønt,1,8.00,Rema 1000,Isabella,8.00
+25/03/2024,Finthakkede skinkesalat ,Kød,1,10.00,Rema 1000,Isabella,10.00
+25/03/2024,Bananer ,Frugt/grønt,1,8.80,Rema 1000,Isabella,8.80
+25/03/2024,Ben & Jerrys Marshmellow,Frost,1,69.00,Shop'n'Play,Jonathan,69.00
+25/03/2024,Barebells Meal Shake,Mejeri,1,25.00,Shop'n'Play,Jonathan,25.00
+26/03/2024,Mellemlagret ost,Mejeri,3,20.00,365,Jonathan,60.00
+26/03/2024,Jordbær Yoghurt,Mejeri,1,12.00,365,Jonathan,12.00
+26/03/2024,Islandsk Skyr 365,Mejeri,1,22.95,365,Jonathan,22.95
+26/03/2024,Crodots,Brød,2,7.00,Lidl,Jonathan,7.00
+26/03/2024,Jordbær Yoghurt,Mejeri,1,9.95,Lidl,Jonathan,9.00
+26/03/2024,Choko müsli,Kolonial,1,23.95,Lidl,Jonathan,23.95
+26/03/2024,Karamel Ispinde,Frost,1,25.00,Lidl,Jonathan,25.00
+26/03/2024,Ciabattabrød,Brød,1,6.25,365,Anna,6.25
+26/03/2024,Porrer,Frugt/grønt,1,15.00,365,Anna,15.00
+26/03/2024,Kyllingebrystfilet,Kød,1,25.00,365,Anna,15.00
+26/03/2024,Bacontern,Kød,1,12.50,365,Anna,12.50
+26/03/2024,øko Kartofler,Frugt/grønt,1,10.00,365,Anna,10.00
+26/03/2024,Kærgården let,Mejeri,2,8.00,365,Anna,16.00
+27/03/2024,Minimælk,Mejeri,1,11.00,Rema 1000,Isabella,11.00
+27/03/2024,Fuldkorns lasagneplade,Kolonial,1,17.00,Rema 1000,Isabella,17.00
+27/03/2024,Hakkede tomater / hvidløg,Kolonial,2,7.50,Rema 1000,Isabella,15.00
+27/03/2024,Gouda aged,Mejeri,1,33.00,Rema 1000,Isabella,33.00
+27/03/2024,Fettuccine spinat,Køl,1,10.00,Rema 1000,Isabella,10.00
+27/03/2024,Bacon i skiver,Kød,1,15.00,Rema 1000,Isabella,15.00
+27/03/2024,Cocktailpølser ,Kød,1,19.00,Rema 1000,Isabella,19.00
+27/03/2024,Jordbær,Frost,1,13.00,Rema 1000,Isabella,13.00
+27/03/2024,Fuldkorns rugbrød,Brød,1,14.75,Rema 1000,Isabella,14.75
+27/03/2024,Gulerødder,Frugt/grønt,1,10.00,Rema 1000,Isabella,10.00
+27/03/2024,Krabbesalat,Kød,1,10.00,Rema 1000,Isabella,10.00
+27/03/2024,Faxe kondi,Alkohol/soda,1,28.95,365,Anna,28.95
+28/03/2024,Matilde kakao,Mejeri,1,14.50,365,Anna,14.50
+28/03/2024,Mørk chokolade,Snacks/slik,2,9.95,365,Anna,19.90
+28/03/2024,Mælke chokolade,Snacks/slik,2,9.95,365,Anna,19.90
+28/03/2024,Flagesalt,Kolonial,1,24.95,365,Anna,24.95
+28/03/2024,Sandwich papir,Andet,1,13.50,365,Anna,13.50
+28/03/2024,Oreo mini eggs,Snacks/slik,1,22.00,365,Anna,22.00
+28/03/2024,Smør,Mejeri,1,15.95,365,Anna,15.95
+28/03/2024,Øko æg,Køl,1,19.95,365,Anna,19.95
+30/03/2024,Mozarella kugle,Mejeri,2,8.50,365,Anna,17.00
+30/03/2024,Agurk,Frugt/grønt,1,10.00,365,Anna,10.00
+30/03/2024,Salame Di Milano,Mejeri,1,13.95,365,Anna,13.95
+01/04/2024,Toiletpapir,Andet,1,20.95,365,Anna,20.95
+01/04/2024,Øko hvedemel,Kolonial,1,17.95,365,Anna,17.95
+01/04/2024,Matilde kakao,Mejeri,1,14.50,365,Anna,14.50
+01/04/2024,Øko bananer,Frugt/grønt,2,3.00,365,Anna,6.00
+01/04/2024,Smør,Mejeri,1,15.95,365,Anna,15.95
+02/04/2024,Minimælk,Mejeri,1,11.50,Rema 1000,Nikoline,11.50
+02/04/2024,Oliven,Snacks/slik,1,16.95,Rema 1000,Nikoline,16.95
+02/04/2024,Snack rolls,Snacks/slik,1,5.00,Rema 1000,Isabella,5.00
+02/04/2024,Mandler,Kolonial,1,29.00,Rema 1000,Isabella,29.00
+02/04/2024,Skyr med lemon,Mejeri,1,12.00,Rema 1000,Isabella,12.00
+02/04/2024,Øko broccoli,Frugt/grønt,1,16.00,Rema 1000,Anna,16.00
+02/04/2024,Hakket kyllingekød,Kød,1,29.00,Rema 1000,Anna,29.00
+02/04/2024,Kokosolie,Kolonial,1,19.95,Rema 1000,Anna,19.95
+02/04/2024,Puka te,Kolonial,1,29.00,Rema 1000,Anna,29.00
+02/04/2024,Mørk chokolade,Snacks/slik,1,12.00,Lidl,Anna,12.00
+02/04/2024,Bananer ,Frugt/grønt,4,2.00,Lidl,Anna,8.00
+02/04/2024,Havregryn,Kolonial,1,9.95,Lidl,Jonathan,9.95
+02/04/2024,Klovborg ost,Mejeri,2,20.00,Lidl,Jonathan,40.00
+02/04/2024,Knöppers,Snacks/slik,1,32.00,Lidl,Jonathan,32.00
+02/04/2024,Risifrutti Jordbær,Køl,3,8.00,Lidl,Jonathan,24.00
+02/04/2024,Choko müsli,Kolonial,1,23.95,Lidl,Jonathan,23.95
+02/04/2024,Tun I vand,Kolonial,2,7.75,Lidl,Jonathan,15.50
+02/04/2024,Nutella Biscuits,Snacks/slik,1,14.95,Lidl,Jonathan,15.35
+03/04/2024,Sødmælk,Mejeri,1,14.00,Føtex,Camille,14.00
+03/04/2024,Skyr,Mejeri,1,23.00,Føtex,Camille,23.00
+03/04/2024,Frosne hindbær,Frost,1,16.00,Føtex,Camille,16.00
+03/04/2024,Agurk,Frugt/grønt,1,8.00,Føtex,Camille,8.00
+03/04/2024,Digestive choko,Snacks/slik,1,15.00,Føtex,Camille,15.00
+03/04/2024,Hummus,Køl,1,23.00,Føtex,Camille,23.00
+03/04/2024,Pærer,Frugt/grønt,1,25.00,Føtex,Camille,25.00
+04/04/2024,Toiletpapir,Andet,1,20.00,365,Camille,20.00
+04/04/2024,Skraldeposer,Andet,1,10.00,365,Camille,10.00
+04/04/2024,Proteinbar,Snacks/slik,1,10.00,365,Camille,10.00
+04/04/2024,Øko æg 10 stk,Køl,2,25.00,365,Jonathan,50.00
+04/04/2024,Hvid Chokolade,Snacks/slik,2,15.95,365,Jonathan,32.00
+04/04/2024,Hvedemel 2kg,Kolonial,1,16.95,365,Jonathan,16.95
+04/04/2024,Sukker 1kg,Kolonial,1,11.90,365,Jonathan,11.90
+04/04/2024,Kanel Gifflar,Snacks/slik,2,15.00,365,Jonathan,30.00
+04/04/2024,Skyr,Mejeri,1,22.95,365,Jonathan,15.50
+04/04/2024,Hindbær,Frugt/grønt,2,12.00,365,Jonathan,24.00
+04/04/2024,Yoggi Yoghurt,Mejeri,1,12.00,365,Jonathan,12.00
+04/04/2024,Bagepulver,Kolonial,1,8.50,365,Jonathan,8.50
+04/04/2024,Lurpak smør,Kolonial,1,15.00,365,Jonathan,15.00
+04/04/2024,Faxe kondi booster,Alkohol/soda,2,11.50,365,Jonathan,23.00
+04/04/2024,Thise protein iskaffe,Mejeri,3,10.00,365,Jonathan,30.00
+04/04/2024,Fettuccine spinat,Køl,1,9.00,365,Anna,9.00
+04/04/2024,Krydderbaguetes ,Frost,1,14.95,365,Anna,14.95
+04/04/2024,Parmesan ,Mejeri,1,41.95,365,Anna,41.95
+04/04/2024,Champignon,Frugt/grønt,1,7.00,365,Anna,7.00
+04/04/2024,Bacontern,Kød,1,12.50,365,Anna,12.50
+04/04/2024,Spaghetti,Køl,1,5.35,365,Anna,5.35
+04/04/2024,Frilandsæg,Køl,1,32.95,365,Anna,32.95
+05/04/2024,Runda Kanel,Kolonial,1,28.95,Rema 1000,Isabella,28.95
+05/04/2024,Strømpebuks,Andet,1,39.00,Rema 1000,Isabella,39.00
+05/04/2024,Faxe kondi,Alkohol/soda,1,39.60,Rema 1000,Isabella,45.60
+05/04/2024,Mineralvand,Alkohol/soda,1,4.50,Rema 1000,Isabella,7.50
+05/04/2024,Minimælk,Mejeri,1,13.25,365,Anna,13.25
+05/04/2024,Øko løg,Frugt/grønt,1,11.00,365,Anna,11.00
+05/04/2024,Revet ost,Mejeri,1,16.95,365,Anna,16.95
+05/04/2024,Tærtedej,Køl,1,11.95,365,Anna,11.95
+05/04/2024,Bacontern,Kød,1,12.50,365,Anna,12.50
+05/04/2024,Xtra cheddar,Mejeri,1,12.95,365,Anna,12.95
+05/04/2024,Mortadella Bologna,Mejeri,1,13.95,365,Anna,13.95
+05/04/2024,Limpan Brød,Brød,1,15.95,365,Anna,15.95
+06/04/2024,Creme fraiche,Mejeri,1,11.25,365,Anna,11.25
+06/04/2024,Dip,Snacks/slik,1,5.00,365,Anna,5.00
+06/04/2024,Pepsi max,Alkohol/soda,1,16.00,Meny,Anna,16.00
+06/04/2024,Faxe kondi,Alkohol/soda,1,16.00,Meny,Anna,16.00
+06/04/2024,Lindt kugler,Snacks/slik,1,35.00,Meny,Anna,35.00
+06/04/2024,Snack chips m. krydderi,Snacks/slik,1,20.00,Meny,Anna,20.00
+06/04/2024,Snack chips,Snacks/slik,1,20.00,Meny,Anna,20.00
+06/04/2024,Øko dild,Frugt/grønt,1,5.00,Meny,Anna,5.00
+06/04/2024,Varmrøget laks,Kød,2,45.00,Meny,Anna,90.00
+06/04/2024,Hyldeblomst drik,Alkohol/soda,1,13.50,Meny,Anna,13.50
+06/04/2024,Øko Æg,Køl,1,25.95,Meny,Anna,25.95
+06/04/2024,Mayonnaise ,Mejeri,1,17.50,Meny,Anna,17.50
+06/04/2024,Bacon,Kød,1,14.95,Rema 1000,Anna,14.95
+06/04/2024,Leverpostej,Kød,1,29.95,Rema 1000,Anna,29.95
+06/04/2024,Fiskefilet,Frost,1,34.95,Rema 1000,Anna,34.95
+06/04/2024,Rejer,Kød,1,23.40,Rema 1000,Anna,23.40
+06/04/2024,Laurbærblade,Kolonial,1,3.75,Rema 1000,Anna,3.75
+06/04/2024,Hvide aspargers ,Kolonial,1,25.00,Rema 1000,Anna,25.00
+06/04/2024,Fyrfadslys,Andet,1,30.00,Rema 1000,Anna,30.00
+06/04/2024,Kakaomælk,Mejeri,1,12.00,Rema 1000,Anna,12.00
+06/04/2024,Øko Remulade,Kolonial,1,15.50,Rema 1000,Anna,15.50
+06/04/2024,Appelsiner,Frugt/grønt,2,3.50,Rema 1000,Anna,7.00
+06/04/2024,Brune svampe,Frugt/grønt,1,17.00,Rema 1000,Anna,17.00
+06/04/2024,Kyllingebrystfilet,Kød,1,34.95,Rema 1000,Anna,34.95
+06/04/2024,Kærgården ,Mejeri,1,15.00,Rema 1000,Anna,15.00
+06/04/2024,Øko æg,Køl,1,25.50,Rema 1000,Anna,25.50
+06/04/2024,Karse,Frugt/grønt,1,5.55,Rema 1000,Anna,5.55
+06/04/2024,Tarteletter,Kolonial,1,14.75,Rema 1000,Anna,14.75
+06/04/2024,Smoothie,Alkohol/soda,1,10.00,Rema 1000,Isabella,11.50
+06/04/2024,Pastasalat,Andet,1,15.00,Rema 1000,Isabella,15.00
+06/04/2024,Kanel Gifflar,Snacks/slik,1,20.25,Rema 1000,Isabella,20.25
+06/04/2024,Frysepizza,Frost,2,49.95,Føtex,Nikoline,99.90
+06/04/2024,Hårspray,Andet,1,45.95,Føtex,Nikoline,45.00
+06/04/2024,Minimælk,Mejeri,2,11.50,Netto,Nikoline,23.00
+06/04/2024,Coca cola,Alkohol/soda,1,12.50,Netto,Nikoline,23.00
+08/04/2024,Skyr vanilje,Mejeri,1,9.50,Rema 1000,Isabella,9.50
+08/04/2024,Solsikkerugbrød,Brød,1,8.95,Rema 1000,Isabella,8.95
+08/04/2024,Kalkun Bacon,Kød,1,10.00,Rema 1000,Isabella,10.00
+08/04/2024,Mælk,Mejeri,1,12.50,365,Nikoline,12.50
+08/04/2024,Afløbsrens,Andet,1,12.95,365,Nikoline,12.95
+08/04/2024,Rugbrød,Brød,1,25.50,365,Nikoline,25.50
+08/04/2024,Smør,Mejeri,1,10.50,365,Nikoline,10.50
+08/04/2024,Affaldspose,Andet,1,9.95,365,Nikoline,9.95
+08/04/2024,Ost,Mejeri,1,25.00,365,Nikoline,25.00
+08/04/2024,Spegepølse,Kød,1,18.95,365,Nikoline,18.95
+08/04/2024,Kyllinge pålæg,Kød,1,18.95,365,Nikoline,18.95
+08/04/2024,Æg,Køl,1,31.50,365,Nikoline,31.50
+08/04/2024,Champignon,Frugt/grønt,1,16.30,Føtex,Isabella,16.30
+08/04/2024,ØKO salatmix,Frugt/grønt,1,10.00,Føtex,Isabella,10.00
+08/04/2024,Castello Brie m. trøffel,Mejeri,1,20.00,Føtex,Isabella,20.00
+08/04/2024,Mozzarella,Mejeri,1,8.50,Føtex,Isabella,8.50
+08/04/2024,Grov cafe sandwitch,Brød,1,23.95,Føtex,Isabella,23.95
+08/04/2024,Svansø trøffel mayo,Kolonial,1,20.95,Føtex,Isabella,20.95
+08/04/2024,Vabelplaster,Andet,1,31.95,Føtex,Isabella,31.95
+08/04/2024,Fladbrød,Brød,1,13.95,Lidl,Anna,13.95
+08/04/2024,Rødløg,Frugt/grønt,1,12.00,Lidl,Anna,12.00
+08/04/2024,Affaldspose,Andet,1,6.50,Lidl,Anna,5.50
+08/04/2024,Avocado,Frugt/grønt,1,35.00,Meny,Anna,35.00
+08/04/2024,Mayonaise,Mejeri,1,16.50,Meny,Anna,16.50
+08/04/2024,Grillost,Mejeri,2,29.50,Meny,Anna,59.90
+08/04/2024,Spidskål,Frugt/grønt,1,26.00,Meny,Anna,26.00
+09/04/2024,Kiwi,Frugt/grønt,3,4.00,Rema 1000,Camille,12.00
+09/04/2024,Rød peberfrugt,Frugt/grønt,1,7.25,Rema 1000,Camille,7.25
+09/04/2024,Hjertesalat,Frugt/grønt,1,13.00,Rema 1000,Camille,13.00
+09/04/2024,Agurk,Frugt/grønt,1,10.50,Rema 1000,Camille,10.50
+09/04/2024,Kyllingestrimler,Kød,1,20.00,Rema 1000,Camille,20.00
+09/04/2024,Fryseposer 2l,Andet,1,4.00,Rema 1000,Camille,4.00
+09/04/2024,Fryseposer 4 l,Andet,1,14.00,Rema 1000,Camille,14.00
+09/04/2024,Tortillas,Kolonial,1,10.50,Rema 1000,Camille,10.50
+09/04/2024,Avokado dressing,Kolonial,1,14.50,Rema 1000,Camille,14.50
+10/04/2024,Hyldeblomst saft,Alkohol/soda,1,19.25,365,Nikoline,19.25
+10/04/2024,Plastikpose,Andet,1,6.25,365,Nikoline,6.25
+10/04/2024,Agurk,Frugt/grønt,1,10.50,365,Nikoline,10.50
+10/04/2024,Pitabrød,Brød,1,5.95,365,Nikoline,5.95
+10/04/2024,Rødløg,Frugt/grønt,1,9.00,365,Nikoline,9.00
+10/04/2024,Kyllinge kebab,Frost,1,31.95,365,Nikoline,31.95
+10/04/2024,Skagenslapper,Frost,1,16.95,365,Nikoline,16.95
+10/04/2024,Ricotta,Mejeri,1,12.50,365,Nikoline,12.50
+10/04/2024,Tomater,Frugt/grønt,1,15.00,365,Nikoline,15.00
+10/04/2024,Tun I vand,Kolonial,1,38.00,365,Nikoline,38.00
+10/04/2024,Mathilde kakao,Mejeri,1,7.95,365,Nikoline,7.95
+10/04/2024,Instant kaffe,Kolonial,1,35.75,365,Nikoline,35.75
+10/04/2024,Oliven,Kolonial,1,23.95,365,Nikoline,23.95
+10/04/2024,Citronmåne,Snacks/slik,1,20.00,Rema 1000,Isabella,20.00
+10/04/2024,Blomsterkort,Andet,1,5.00,Rema 1000,Isabella,5.00
+10/04/2024,Lagkagediagram,Andet,1,10.00,Rema 1000,Isabella,10.00
+10/04/2024,Pepsi Max,Alkohol/soda,1,16.00,Meny,Anna,16.00
+10/04/2024,Grillost,Mejeri,1,16.00,Meny,Anna,16.00

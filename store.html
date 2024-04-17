@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v6.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+
+<script>
+    // set the dimensions and margins of the graph
+    var margin = {top: 30, right: 30, bottom: 70, left: 60},
+        width = 800 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
+    // append the svg object to the body of the page
+    var svg = d3.select("#my_dataviz")
+      .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform",
+              "translate(" + margin.left + "," + margin.top + ")");
+    
+    // Parse the Data
+    d3.csv("data.csv").then(function(data) {
+
+
+    // X axis
+    var uniquePersons = [...new Set(data.map(d => d.PERSON))];
+    console.log("Unique Persons:", uniquePersons);
+
+    var uniqueStores = new Set(data.map(d => d.BUTIK));
+    console.log("Unique Categories:", uniqueStores);
+
+    // Define x scale
+    var x = d3.scaleBand()
+        .range([0, width]) //The range specifies the minimum and maximum values in the output range.
+        .domain(uniquePersons) //The domain specifies the input values that will be mapped to the output range
+        .padding(0.2); //The space between the bars. 0.2 means that each band will have 20% of its width reserved for padding.
+
+    // Append x-axis to SVG
+    svg.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x))
+        .selectAll("text")
+          .attr("transform", "translate(-10,0)rotate(-45)")
+          .style("text-anchor", "end");
+    
+    
+    //Y axis
+// Define y scale
+var y = d3.scaleLinear()
+    .domain([0, 110])
+    .range([ height, 0 ]);
+  svg.append("g")
+    .call(d3.axisLeft(y));
+
+    // Append y-axis to SVG
+svg.append("g")
+    .call(d3.axisLeft(y));
+
+    //rollup maps the sum of ialt to each person
+    //d3.rollup(iterable, value, keys)
+    // rollup maps the count of each category to each person
+var personStoreCounts = d3.rollup(data,
+  v => {
+    var counts = new Map();
+    v.forEach(d => {
+      var count = counts.get(d.BUTIK) || 0;
+      counts.set(d.BUTIK, count + 1);
+    });
+    return counts;
+  },
+  k => k.PERSON
+);
+
+// Flatten the counts into an array of objects
+var stackedData = Array.from(personStoreCounts, ([person, counts]) => ({
+  person: person,
+  counts: Array.from(counts, ([store, count]) => ({ store: store, count: count }))
+}));
+
+// Define color scale for categories
+var myColors = ["#6c584c", "#c3d4f1", "#80b918", "#ff9e00", "#9d4edd","#710000","#00509d","#fae588"];
+var storeColors = d3.scaleOrdinal()
+  .domain(uniqueStores)
+  .range(myColors);
+
+// Stack data
+var stackedDataNested = d3.stack()
+  .keys(uniqueStores)
+  .value((d, key) => {
+    var value = d.counts.find(c => c.store === key);
+    return value ? value.count : 0;
+  })(stackedData);
+
+  // ----------------
+  // Create a tooltip
+  // ----------------
+  var tooltip = d3.select("#my_dataviz")
+    .append("div")
+    .style("opacity", 0)
+    .attr("class", "tooltip")
+    .style("background-color", "white")
+    .style("border", "solid")
+    .style("border-width", "1px")
+    .style("border-radius", "5px")
+    .style("padding", "10px")
+
+  // Three function that change the tooltip when user hover / move / leave a cell
+  var mouseover = function(event, d) {
+    var storeName = d3.select(this.parentNode).datum().key;
+    var storeCount = d.data.counts.find(c => c.store === storeName).count || 0; // Accessing the count property from the stacked data
+    tooltip
+        .html("Person: " + d.data.person + "<br>" + "Store: " + storeName + "<br>" + "Count: " + storeCount)
+        .style("opacity", 1);
+};
+var mousemove = function(d) {
+    tooltip
+      .style("left", (d3.pointer(this)[0]+90) + "px") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
+      .style("top", (d3.pointer(this)[1]) + "px")
+  }
+
+  var mouseleave = function(d) {
+    tooltip
+      .style("opacity", 0)
+  }
+  
+// Append rectangles for each category
+svg.selectAll(".bar")
+  .data(stackedDataNested)
+  .enter().append("g")
+  .attr("fill", d => storeColors(d.key))
+  .selectAll("rect")
+  .data(d => d)
+  .enter().append("rect")
+  .attr("x", d => x(d.data.person))
+  .attr("y", d => y(d[1])) // Top position of the bar
+  .attr("height", d => y(d[0]) - y(d[1])) // Height of the bar
+  .attr("width", x.bandwidth())
+  .on("mouseover", mouseover)
+  .on("mousemove", mousemove)
+  .on("mouseleave", mouseleave);
+
+  });
+</script>
