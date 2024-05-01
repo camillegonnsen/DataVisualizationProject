@@ -34,13 +34,28 @@
 
 
 <script>
+
+var categoriesData = [
+    { category: "Fruits", x: 350, y: 100, width: 500, height: 150, color:"red" },
+    { category: "Vegetables", x: 600, y: 100, width: 200, height: 200, color: "yellow" },
+    { category: "Dairy", x: 850, y: 100, width: 200, height: 200, color: "green" },
+    // Add more categories as needed
+];
 // create svg element:
 
 // Add the path using this helper function
   var svgLines = d3.select("#segment").append("svg").attr("width", 1980).attr("height", 900)
-
+  svgLines.selectAll(".category-rect")
+    .data(categoriesData)
+    .enter()
+    .append("rect")
+    .attr("class", "category-rect")
+    .attr("x", function(d) { return d.x; })
+    .attr("y", function(d) { return d.y; })
+    .attr("width", function(d) { return d.width; })
+    .attr("height", function(d) { return d.height; })
+    .attr("fill", function(d) { return d.color; })  // Change to desired fill color or pattern
   //Adding the outlines of the grocery store
-
   //top line
   svgLines.append('line')
   .attr('x1', 300)
