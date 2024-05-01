@@ -15,7 +15,7 @@
 // create svg element:
 
 // Add the path using this helper function
-  var svgLines = d3.select("#segment").append("svg").attr("width", 1366).attr("height", 768)
+  var svgLines = d3.select("#segment").append("svg").attr("width", 1980).attr("height", 900)
 
   //Adding the outlines of the grocery store
 
@@ -23,18 +23,17 @@
   svgLines.append('line')
   .attr('x1', 300)
   .attr('y1', 70)
-  .attr('x2', 1166)
+  .attr('x2', 1600)
   .attr('y2', 70)
   .attr('stroke', 'black')
   .attr('stroke-width', 3);
 
-
   //bottom line
   svgLines.append('line')
   .attr('x1', 400)
-  .attr('y1', 600)
-  .attr('x2', 1066)
-  .attr('y2', 600)
+  .attr('y1', 800)
+  .attr('x2', 1500)
+  .attr('y2', 800)
   .attr('stroke', 'black')
   .attr('stroke-width', 3);
 
@@ -43,34 +42,34 @@
   .attr('x1', 300)
   .attr('y1', 70)
   .attr('x2', 300)
-  .attr('y2', 500)
+  .attr('y2', 650)
   .attr('stroke', 'black')
   .attr('stroke-width', 3);
 
   //right line
   svgLines.append('line')
-  .attr('x1', 1166)
+  .attr('x1', 1600)
   .attr('y1', 70)
-  .attr('x2', 1166)
-  .attr('y2', 500)
+  .attr('x2', 1600)
+  .attr('y2', 650)
   .attr('stroke', 'black')
   .attr('stroke-width', 3);
 
   //left diagonal line
   svgLines.append('line')
   .attr('x1', 300)
-  .attr('y1', 500)
+  .attr('y1', 650)
   .attr('x2', 400)
-  .attr('y2', 600)
+  .attr('y2', 800)
   .attr('stroke', 'black')
   .attr('stroke-width', 3);
 
   //right diagonal line
   svgLines.append('line')
-  .attr('x1', 1166)
-  .attr('y1', 500)
-  .attr('x2', 1066)
-  .attr('y2', 600)
+  .attr('x1', 1600)
+  .attr('y1', 650)
+  .attr('x2', 1500)
+  .attr('y2', 800)
   .attr('stroke', 'black')
   .attr('stroke-width', 3);
 
