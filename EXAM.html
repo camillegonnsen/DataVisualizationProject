@@ -5,6 +5,28 @@
 
 <!-- Load d3.js -->
 <script src="https://d3js.org/d3.v6.js"></script>
+
+<!-- Create a div where the buttons will be -->
+<div id="sort_buttons" style="margin-top: 20px; text-align: center;">
+  <button class="sort_button", style ="background-color: #ead1dc;" onclick="sortData('Anna')">Anna</button>
+  <button class="sort_button", style="background-color: #c3d4f1;" onclick="sortData('Camille')">Camille</button>
+  <button class="sort_button", style="background-color: #f9cb9c;" onclick="sortData('Isabella')">Isabella</button>
+  <button class="sort_button", style="background-color: #d9ead3;" onclick="sortData('Jonathan')">Jonathan</button>
+  <button class="sort_button", style="background-color: #fff2cc;" onclick="sortData('Nikoline')">Nikoline</button>
+</div>
+
+<style>
+.sort_button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+}
+</style>
+
 <div id="segment"></div>
 <!-- Create a div where the graph will take place -->
 <div id="my_dataviz"></div>
