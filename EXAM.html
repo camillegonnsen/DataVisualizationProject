@@ -25,6 +25,24 @@
   font-size: 16px;
   cursor: pointer;
 }
+
+div.tooltip {	
+    position: absolute;			
+    text-align: center;								
+    padding: 10px;				 
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;	
+    border: 1px solid #fff;		
+    border-radius: 8px;			
+    pointer-events: all;
+    font-size: 50px;			
+}
+
+
+.category.rect{
+  pointer-events: all;
+}
+
 </style>
 
 <div id="segment"></div>
@@ -35,27 +53,110 @@
 
 <script>
 
+// ------------------------------ //
+//                                //
+//          CATEGORIES            //
+//                                //
+// ------------------------------ //
+
 var categoriesData = [
-    { category: "Fruits", x: 350, y: 100, width: 500, height: 150, color:"red" },
-    { category: "Vegetables", x: 600, y: 100, width: 200, height: 200, color: "yellow" },
-    { category: "Dairy", x: 850, y: 100, width: 200, height: 200, color: "green" },
+    { category: "Fruits", x: 350, y: 100, width: 240, height: 150, color:"#d9ead3", text: "", tooltipText: "hello"},
+    { category: "Vegetables", x: 350, y: 250, width: 150, height: 400, color: "#d9ead3", text: "Vegetables", tooltipText: "We have used in total 2000 krones in this section."},
+    { category: "Dairy", x: 620, y: 100, width: 240, height: 150, color: "#8ecae6", text: "Dairy", tooltipText: ""},
+    { category: "Refrigerator", x: 890, y: 100, width: 240, height: 150, color: "#219ebc", text: "Regrigerator", tooltipText: "" },
+    { category: "Colonialgoods", x: 1160, y: 100, width: 390, height: 150, color: "#ef476f", text: "Colonial", tooltipText: "" },
+    { category: "Colonial", x: 1400, y: 250, width: 150, height: 150, color: "#ef476f", tooltipText:"" },
+    { category: "Meat", x: 580, y: 350, width: 150, height: 300, color: "#f08080", text: "Meat", tooltipText:"" },
+    { category: "Bread", x: 760, y: 350, width: 150, height: 300, color: " #eb5e28", text: "Bread", tooltipText:"" },
+    { category: "Frost", x: 940, y: 350, width: 150, height: 300, color: "#0096c7", text: "Frost", tooltipText:""},
+    { category: "Other", x: 1120, y: 350, width: 150, height: 300, color: "#d6ce93", text: "Other", tooltipText:""},
+    { category: "Soda", x: 1335, y: 430, width: 215, height: 100, color: "#f9844a", text: "Alkohol/Soda", tooltipText:""},
+    { category: "Candy", x: 1335 , y: 550, width: 215, height: 100, color: "#f3722c", text: "Candy/Snacks", tooltipText:""},
+    { category: "Checkout1", x: 700, y: 730, width: 100, height: 130, color: "#e09f3e", text: "Checkout", tooltipText: ""},
+    { category: "Checkout2", x: 1060 , y: 730, width: 100, height: 130, color: "#e09f3e", text: "Checkout", tooltipText: ""},
     // Add more categories as needed
 ];
-// create svg element:
+
+// ------------------------------ //
+//                                //
+//        SHOW RECTANGELS         //
+//        AND TOOLTIP DIV         //
+// ------------------------------ //
+
+  // Append tooltip div
+  var segment = d3.select("#segment");
+  var tooltipDiv = segment.append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
 
 // Add the path using this helper function
-  var svgLines = d3.select("#segment").append("svg").attr("width", 1980).attr("height", 900)
+  var svgLines = segment.append("svg").attr("width", 1980).attr("height", 1000)
   svgLines.selectAll(".category-rect")
     .data(categoriesData)
     .enter()
     .append("rect")
     .attr("class", "category-rect")
+    .attr("data-category", function(d) { return d.category; }) // Add data-category attribute
     .attr("x", function(d) { return d.x; })
     .attr("y", function(d) { return d.y; })
     .attr("width", function(d) { return d.width; })
     .attr("height", function(d) { return d.height; })
-    .attr("fill", function(d) { return d.color; })  // Change to desired fill color or pattern
-  //Adding the outlines of the grocery store
+    .attr("fill", function(d) { return d.color; })
+    .attr("text", function(d) { return d.text; })  // Change to desired fill color or pattern
+    
+    .on("mouseover", function(d) {
+      d3.select(this).transition()
+      .duration('50')
+      .attr('opacity', '.85');
+      
+      tooltipDiv.transition()
+      .duration('50')
+      .style("opacity", 1)
+      .html(d.tooltipText) // Display category tooltipText as tooltip content
+      .style("top", (d3.event.pageY - 45) + "px")
+      .style("left", (d3.event.pageX + 40) + "px")
+      return d.text;
+    })
+
+    .on("mouseout", function(d) {
+        d3.select(this).transition()
+            .duration('50')
+            .attr('opacity', '1');
+
+        tooltipDiv.transition()
+            .duration('50')
+            .style("opacity", 0);
+    });
+
+// ------------------------------ //
+//                                //
+//        SHOW GROCERY TEXT       //
+//                                //
+// ------------------------------ //
+  
+  //Adding the outlines of the grocery store text
+  svgLines.selectAll(".category-text")
+    .data(categoriesData)
+    .enter()
+    .append("text")
+    .attr("class", "category-text")
+    .attr("x", function(d) { return d.x + d.width / 2; }) // Adjust the x-coordinate for center alignment
+    .attr("y", function(d) { return d.y + d.height / 2; }) // Adjust the y-coordinate for center alignment
+    .text(function(d) { return d.text; })
+    .attr("font-size", "20px")
+    .attr("fill", "black")
+    .attr("text-anchor", "middle") // Center align the text horizontally
+    .attr("dominant-baseline", "middle"); // Center align the text vertically
+    //.attr("transform", function(d) { return "rotate(90 " + (d.x + d.width / 2) + "," + (d.y + d.height / 2) + ")"; }); // Rotate the text vertically
+
+
+// ------------------------------ //
+//                                //
+//        LINES FOR STORE         //
+//                                //
+// ------------------------------ //
+
+
   //top line
   svgLines.append('line')
   .attr('x1', 300)
@@ -67,10 +168,10 @@ var categoriesData = [
 
   //bottom line
   svgLines.append('line')
-  .attr('x1', 400)
-  .attr('y1', 800)
-  .attr('x2', 1500)
-  .attr('y2', 800)
+  .attr('x1', 450)
+  .attr('y1', 900)
+  .attr('x2', 1400)
+  .attr('y2', 900)
   .attr('stroke', 'black')
   .attr('stroke-width', 3);
 
@@ -96,8 +197,8 @@ var categoriesData = [
   svgLines.append('line')
   .attr('x1', 300)
   .attr('y1', 650)
-  .attr('x2', 400)
-  .attr('y2', 800)
+  .attr('x2', 450)
+  .attr('y2', 900)
   .attr('stroke', 'black')
   .attr('stroke-width', 3);
 
@@ -105,88 +206,10 @@ var categoriesData = [
   svgLines.append('line')
   .attr('x1', 1600)
   .attr('y1', 650)
-  .attr('x2', 1500)
-  .attr('y2', 800)
+  .attr('x2', 1400)
+  .attr('y2', 900)
   .attr('stroke', 'black')
   .attr('stroke-width', 3);
 
-// set the dimensions and margins of the graph
-      var margin = {top: 30, right: 30, bottom: 70, left: 60},
-        width = 700 - margin.left - margin.right,
-        height = 500 - margin.top - margin.bottom;
-    
-  // append the svg object to the body of the page
-      var svgMoney = d3.select("#my_dataviz")
-      .append("svg")
-        .attr("width", width + margin.left + margin.right)
-        .attr("height", height + margin.top + margin.bottom)
-      .append("g")
-        .attr("transform",
-              "translate(" + margin.left + "," + margin.top + ")");
 
-    
-    // Parse the Data
-    d3.csv("data.csv").then(function(data) {
-
-    // X axis
-    var uniquePersons = [...new Set(data.map(d => d.PERSON))];
-    console.log("Unique Persons:", uniquePersons);
-
-    // Define x scale
-    var x = d3.scaleBand()
-        .range([0, width]) //The range specifies the minimum and maximum values in the output range.
-        .domain(uniquePersons) //The domain specifies the input values that will be mapped to the output range
-        .padding(0.2); //The space between the bars. 0.2 means that each band will have 20% of its width reserved for padding.
-
-    // Append x-axis to SVG
-    svgMoney.append("g")
-        .attr("transform", "translate(0," + height + ")")
-        .call(d3.axisBottom(x))
-        .selectAll("text")
-          .attr("transform", "translate(-10,0)rotate(-45)")
-          .style("text-anchor", "end");
-    
-    
-    //Y axis
-
-    //rollup maps the sum of ialt to each person
-    //d3.rollup(iterable, value, keys)
-    var personTotalAmounts = d3.rollup(data, 
-      v => {
-        sum = d3.sum(v, d => d.IALT);
-
-        console.log(v[0].PERSON + ": " + sum + " kr."); // Log the sum amount for each person
-    
-        return sum;
-     }, 
-     k => k.PERSON
-    );
-
-
-
-    // Define y scale
-    var y = d3.scaleLinear()
-        .domain([0, 2000]) 
-        .range([height, 0]);
-
-    svgMoney.append("g")
-        .call(d3.axisLeft(y));
-        
-    var myColors = ["#ead1dc", "#c3d4f1", "#f9cb9c", "#d9ead3", "#fff2cc"];
-
-    var colorScale = d3.scaleOrdinal()
-        .domain(uniquePersons)
-        .range(myColors);
-
-    svgMoney.selectAll("mybar")
-    .data(data)
-    .enter()
-    .append("rect")
-      .attr("x", function(d) { return x(d.PERSON); })
-      .attr("y", function(d) { return y(personTotalAmounts.get(d.PERSON)); }) // Use the total amount spent for the y position
-      .attr("width", x.bandwidth())
-      .attr("height", function(d) { return height - y(personTotalAmounts.get(d.PERSON)); })
-      .attr("fill", function(d) { return colorScale(d.PERSON); }); // Assign color based on the person
-
-    });
 </script>
