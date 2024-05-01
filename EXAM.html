@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<h1 style="text-align: center;">GROCERY STORE</h1>
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v6.js"></script>
+<div id="segment"></div>
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+
+
+
+<script>
+// create svg element:
+
+// Add the path using this helper function
+  var svgLines = d3.select("#segment").append("svg").attr("width", 2000).attr("height", 200)
+
+  //Adding the outlines of the grocery store
+  svgLines.append('line')
+  .attr('x1', 300)
+  .attr('y1', 70)
+  .attr('x2', 1166)
+  .attr('y2', 70)
+  .attr('stroke', 'black')
+  .attr('stroke-width', 3);
+
+  svgLines.append('line')
+  .attr('x1', 400)
+  .attr('y1', 200)
+  .attr('x2', 2000)
+  .attr('y2', 200)
+  .attr('stroke', 'black')
+  .attr('stroke-width', 6);
+
+// set the dimensions and margins of the graph
+      var margin = {top: 30, right: 30, bottom: 70, left: 60},
+        width = 700 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
+    
+  // append the svg object to the body of the page
+      var svgMoney = d3.select("#my_dataviz")
+      .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+      .append("g")
+        .attr("transform",
+              "translate(" + margin.left + "," + margin.top + ")");
+
+    
+    // Parse the Data
+    d3.csv("data.csv").then(function(data) {
+
+    // X axis
+    var uniquePersons = [...new Set(data.map(d => d.PERSON))];
+    console.log("Unique Persons:", uniquePersons);
+
+    // Define x scale
+    var x = d3.scaleBand()
+        .range([0, width]) //The range specifies the minimum and maximum values in the output range.
+        .domain(uniquePersons) //The domain specifies the input values that will be mapped to the output range
+        .padding(0.2); //The space between the bars. 0.2 means that each band will have 20% of its width reserved for padding.
+
+    // Append x-axis to SVG
+    svgMoney.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(x))
+        .selectAll("text")
+          .attr("transform", "translate(-10,0)rotate(-45)")
+          .style("text-anchor", "end");
+    
+    
+    //Y axis
+
+    //rollup maps the sum of ialt to each person
+    //d3.rollup(iterable, value, keys)
+    var personTotalAmounts = d3.rollup(data, 
+      v => {
+        sum = d3.sum(v, d => d.IALT);
+
+        console.log(v[0].PERSON + ": " + sum + " kr."); // Log the sum amount for each person
+    
+        return sum;
+     }, 
+     k => k.PERSON
+    );
+
+
+
+    // Define y scale
+    var y = d3.scaleLinear()
+        .domain([0, 2000]) 
+        .range([height, 0]);
+
+    svgMoney.append("g")
+        .call(d3.axisLeft(y));
+        
+    var myColors = ["#ead1dc", "#c3d4f1", "#f9cb9c", "#d9ead3", "#fff2cc"];
+
+    var colorScale = d3.scaleOrdinal()
+        .domain(uniquePersons)
+        .range(myColors);
+
+    svgMoney.selectAll("mybar")
+    .data(data)
+    .enter()
+    .append("rect")
+      .attr("x", function(d) { return x(d.PERSON); })
+      .attr("y", function(d) { return y(personTotalAmounts.get(d.PERSON)); }) // Use the total amount spent for the y position
+      .attr("width", x.bandwidth())
+      .attr("height", function(d) { return height - y(personTotalAmounts.get(d.PERSON)); })
+      .attr("fill", function(d) { return colorScale(d.PERSON); }); // Assign color based on the person
+
+    });
+</script>
