@@ -28,14 +28,14 @@
 
 div.tooltip {	
     position: absolute;			
-    text-align: center;								
+    text-align: left;								
     padding: 10px;				 
-    background: rgba(0, 0, 0, 0.8);
-    color: #fff;	
     border: 1px solid #fff;		
     border-radius: 8px;			
-    pointer-events: all;
-    font-size: 50px;			
+    pointer-events: none;
+    font-size: 16px;
+    opacity: 0;	
+    transition: opacity 0.2s;		
 }
 
 
@@ -60,20 +60,20 @@ div.tooltip {
 // ------------------------------ //
 
 var categoriesData = [
-    { category: "Fruits", x: 350, y: 100, width: 240, height: 150, color:"#d9ead3", text: "", tooltipText: "hello"},
-    { category: "Vegetables", x: 350, y: 250, width: 150, height: 400, color: "#d9ead3", text: "Vegetables", tooltipText: "We have used in total 2000 krones in this section."},
-    { category: "Dairy", x: 620, y: 100, width: 240, height: 150, color: "#8ecae6", text: "Dairy", tooltipText: ""},
-    { category: "Refrigerator", x: 890, y: 100, width: 240, height: 150, color: "#219ebc", text: "Regrigerator", tooltipText: "" },
-    { category: "Colonialgoods", x: 1160, y: 100, width: 390, height: 150, color: "#ef476f", text: "Colonial", tooltipText: "" },
-    { category: "Colonial", x: 1400, y: 250, width: 150, height: 150, color: "#ef476f", tooltipText:"" },
-    { category: "Meat", x: 580, y: 350, width: 150, height: 300, color: "#f08080", text: "Meat", tooltipText:"" },
-    { category: "Bread", x: 760, y: 350, width: 150, height: 300, color: " #eb5e28", text: "Bread", tooltipText:"" },
-    { category: "Frost", x: 940, y: 350, width: 150, height: 300, color: "#0096c7", text: "Frost", tooltipText:""},
-    { category: "Other", x: 1120, y: 350, width: 150, height: 300, color: "#d6ce93", text: "Other", tooltipText:""},
-    { category: "Soda", x: 1335, y: 430, width: 215, height: 100, color: "#f9844a", text: "Alkohol/Soda", tooltipText:""},
-    { category: "Candy", x: 1335 , y: 550, width: 215, height: 100, color: "#f3722c", text: "Candy/Snacks", tooltipText:""},
-    { category: "Checkout1", x: 700, y: 730, width: 100, height: 130, color: "#e09f3e", text: "Checkout", tooltipText: ""},
-    { category: "Checkout2", x: 1060 , y: 730, width: 100, height: 130, color: "#e09f3e", text: "Checkout", tooltipText: ""},
+    { category: "Fruits", x: 350, y: 100, width: 240, height: 150, color:"#d9ead3", text: "", tooltipText:  "We have bought vegetables for total 644,15 DKK."},
+    { category: "Vegetables", x: 350, y: 250, width: 150, height: 400, color: "#d9ead3", text: "Vegetables", tooltipText: "We have bought vegetables for total 644,15 DKK."},
+    { category: "Dairy", x: 620, y: 100, width: 240, height: 150, color: "#8ecae6", text: "Dairy", tooltipText: "We have bought dairy products for total 1.182,15 DKK."},
+    { category: "Refrigerator", x: 890, y: 100, width: 240, height: 150, color: "#219ebc", text: "Regrigerator", tooltipText: "We have bought refrigerator products for total 374,15 DKK." },
+    { category: "Colonialgoods", x: 1160, y: 100, width: 390, height: 150, color: "#ef476f", text: "Colonial", tooltipText: "We have bought colonial products for total 755,85 DKK." },
+    { category: "Colonial", x: 1400, y: 245, width: 150, height: 150, color: "#ef476f", tooltipText:"We have bought colonial products for total 755,85 DKK." },
+    { category: "Meat", x: 580, y: 350, width: 150, height: 300, color: "#f08080", text: "Meat", tooltipText:"We have bought meat for total 611,60 DKK." },
+    { category: "Bread", x: 760, y: 350, width: 150, height: 300, color: " #eb5e28", text: "Bread", tooltipText:"We have bought bread for total 134,25 DKK." },
+    { category: "Frost", x: 940, y: 350, width: 150, height: 300, color: "#0096c7", text: "Frost", tooltipText:"We have bought frost products for total 506,65 DKK."},
+    { category: "Other", x: 1120, y: 350, width: 150, height: 300, color: "#d6ce93", text: "Other", tooltipText:"Other things we have bought for total 293,05 DKK."},
+    { category: "Soda", x: 1335, y: 430, width: 215, height: 100, color: "#f9844a", text: "Alcohol/Soda", tooltipText: "We have bought alcohol/soda for total 411,00 DKK."},
+    { category: "Candy", x: 1335 , y: 550, width: 215, height: 100, color: "#f3722c", text: "Candy/Snacks", tooltipText:"We have bought candy/snacks for total 510,25 DKK."},
+    { category: "Checkout1", x: 700, y: 730, width: 100, height: 130, color: "#e09f3e", text: "Checkout", tooltipText: "In total we have used 5423,1 DKK."},
+    { category: "Checkout2", x: 1060 , y: 730, width: 100, height: 130, color: "#e09f3e", text: "Discounts", tooltipText: "In total we have saved 676,64 DKK."},
     // Add more categories as needed
 ];
 
@@ -104,28 +104,35 @@ var categoriesData = [
     .attr("fill", function(d) { return d.color; })
     .attr("text", function(d) { return d.text; })  // Change to desired fill color or pattern
     
-    .on("mouseover", function(d) {
-      d3.select(this).transition()
-      .duration('50')
-      .attr('opacity', '.85');
-      
-      tooltipDiv.transition()
-      .duration('50')
-      .style("opacity", 1)
-      .html(d.tooltipText) // Display category tooltipText as tooltip content
-      .style("top", (d3.event.pageY - 45) + "px")
-      .style("left", (d3.event.pageX + 40) + "px")
-      return d.text;
+    // make the tooltip appear beside the category rectangle
+    .on("mouseover", function(event, d) {
+    console.log("Mouseover event: ", d); // Debugging line
+    d3.select(this).transition()
+      .duration(50)
+      .attr("opacity", 0.85);
+
+    tooltipDiv.transition()
+      .duration(50)
+      .style("opacity", 1);
+
+    tooltipDiv.html("<strong>"  + d.tooltipText + "</strong><br>") // Display category text and tooltipText as tooltip content
+      .style("background", d.color)
+      .style("top", (event.pageY + 10) + "px") // Position the tooltip 10px below the mouse position
+      .style("left", (event.pageX + 10) + "px"); // Position the tooltip 10px to the right of the mouse position
     })
 
-    .on("mouseout", function(d) {
-        d3.select(this).transition()
-            .duration('50')
-            .attr('opacity', '1');
+    .on("mousemove", function(event, d) {
+      tooltipDiv.style("top", (event.pageY + 10) + "px") // Move the tooltip with the mouse
+        .style("left", (event.pageX + 10) + "px");
+    })
+    .on("mouseout", function(event, d) {
+      d3.select(this).transition()
+        .duration(50)
+        .attr("opacity", 1);
 
-        tooltipDiv.transition()
-            .duration('50')
-            .style("opacity", 0);
+      tooltipDiv.transition()
+        .duration(50)
+        .style("opacity", 0);
     });
 
 // ------------------------------ //
