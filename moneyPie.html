@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v6.js"></script>
+
+<!-- Create a div where the graph will take place -->
+<div id="my_dataviz"></div>
+
+<script>
+    // set the dimensions and margins of the graph
+    var width = 1000,
+        height = 500,
+        margin = 40;
+
+    // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
+    var radius = Math.min(width, height) / 2 - margin;
+
+    // append the svg object to the div called 'my_dataviz'
+    var svg = d3.select("#my_dataviz")
+      .append("svg")
+        .attr("width", width)
+        .attr("height", height)
+      .append("g")
+        .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+    // Parse the Data
+    d3.csv("data.csv").then(function(data) {
+
+        // Rollup the data to get the total amount spent per person
+        var personTotalAmounts = d3.rollup(data, 
+          v => d3.sum(v, d => d.IALT),
+          k => k.PERSON
+        );
+
+        // Convert the rollup to a more convenient format for the pie chart
+        var dataReady = Array.from(personTotalAmounts, ([PERSON, IALT]) => ({ PERSON, IALT }));
+
+        // Set the color scale
+        var myColors = ["#ead1dc", "#c3d4f1", "#f9cb9c", "#d9ead3", "#fff2cc"];
+        var colorScale = d3.scaleOrdinal()
+            .domain(dataReady.map(d => d.PERSON))
+            .range(myColors);
+
+        // Compute the position of each group on the pie
+        var pie = d3.pie()
+            .value(function(d) { return d.IALT; });
+
+        var data_pie = pie(dataReady);
+
+        // Build the pie chart: each part of the pie is a path that we build using the arc function.
+        var arc = d3.arc()
+            .innerRadius(0)
+            .outerRadius(radius);
+
+        svg
+          .selectAll('slices')
+          .data(data_pie)
+          .enter()
+          .append('path')
+            .attr('d', arc)
+            .attr('fill', function(d) { return colorScale(d.data.PERSON); })
+            .attr("stroke", "white")
+            .style("stroke-width", "2px")
+            .style("opacity", 0.7);
+
+        // Add the labels to the pie chart slices
+        svg
+          .selectAll('slices')
+          .data(data_pie)
+          .enter()
+          .append('text')
+          .text(function(d) { return d.data.PERSON; })
+          .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+          .style("text-anchor", "middle")
+          .style("font-size", 14);
+
+        // Add legend
+        var legend = svg
+            .append("g")
+            .attr("transform", "translate(" + (width / 2 - radius - margin) + "," + (-height / 2 + margin) + ")");
+
+        var legendItemSize = 20;
+        var legendSpacing = 4;
+
+        legend.selectAll("legendItems")
+            .data(dataReady)
+            .enter()
+            .append("rect")
+                .attr("x", 0)
+                .attr("y", function(d, i) { return i * (legendItemSize + legendSpacing); })
+                .attr("width", legendItemSize)
+                .attr("height", legendItemSize)
+                .attr("fill", function(d) { return colorScale(d.PERSON); });
+
+        legend.selectAll("legendLabels")
+            .data(dataReady)
+            .enter()
+            .append("text")
+                .attr("x", legendItemSize + legendSpacing)
+                .attr("y", function(d, i) { return i * (legendItemSize + legendSpacing) + (legendItemSize / 1.5); })
+                .text(function(d) { return d.PERSON + ": " + d.IALT + " kr"; })
+                .style("font-size", 14);
+    });
+</script>
