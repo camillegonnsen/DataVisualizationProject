@@ -23,7 +23,7 @@
               "translate(" + margin.left + "," + margin.top + ")");
     
     // Parse the Data
-    d3.csv("data1.csv").then(function(data) {
+    d3.csv("data.csv").then(function(data) {
 
         // X axis
         var uniquePersons = [...new Set(data.map(d => d.PERSON))];
